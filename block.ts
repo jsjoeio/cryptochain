@@ -1,11 +1,11 @@
-interface Block {
-    timestamp: string,
-    lastHash: string,
-    hash: string,
-    data: any,
-}
+// interface Block {
+//     timestamp: string,
+//     lastHash: string,
+//     hash: string,
+//     data: any,
+// }
 
-class Block {
+export class Block {
     timestamp: string
     lastHash: string
     hash: string
@@ -18,7 +18,3 @@ class Block {
         this.data = data
     }
 }
-
-const block1 = new Block({timestamp:"01/01/01", lastHash: "foo-lastHash", hash: "foo-hash", data: 'foo-data'})
-
-console.log(block1, "hi")
