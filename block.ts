@@ -1,10 +1,3 @@
-// interface Block {
-//     timestamp: string,
-//     lastHash: string,
-//     hash: string,
-//     data: any,
-// }
-
 import { GENESIS_DATA } from "./config";
 
 export class Block {
@@ -21,6 +14,15 @@ export class Block {
   }
 
   static genesis() {
-    return new Block(GENESIS_DATA);
+    return new this(GENESIS_DATA);
+  }
+
+  static mineBlock({ lastBlock, data }: { lastBlock: Block; data: any }) {
+    return new this({
+      timestamp: Date.now().toString(),
+      hash: "fdsa",
+      lastHash: lastBlock.hash,
+      data,
+    });
   }
 }
